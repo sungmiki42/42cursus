@@ -6,7 +6,7 @@
 /*   By: sungmiki <sungmiki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:59:09 by sungmiki          #+#    #+#             */
-/*   Updated: 2023/03/22 16:49:57 by sungmiki         ###   ########.fr       */
+/*   Updated: 2023/03/22 20:42:57 by sungmiki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <errno.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;

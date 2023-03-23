@@ -6,7 +6,7 @@
 /*   By: sungmiki <sungmiki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 14:58:33 by sungmiki          #+#    #+#             */
-/*   Updated: 2023/03/22 17:29:28 by sungmiki         ###   ########.fr       */
+/*   Updated: 2023/03/22 20:42:45 by sungmiki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 int	ft_lstsize(t_list *lst)
 {
 	int	count;
-	
+
 	count = 0;
 	while (lst && 0 <= count++)
 		lst = lst->next;
