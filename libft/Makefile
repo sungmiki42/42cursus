@@ -1,6 +1,5 @@
 CC = cc
 NAME = libft.a
-BONUS = libft.a
 CFLAGS = -Wall -Wextra -Werror
 M_SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 		 ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c\
@@ -12,23 +11,30 @@ M_SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 B_SRCS = ft_first_bonus.c ft_second_bonus.c
 M_OBJS = $(M_SRCS:.c=.o)
 B_OBJS = $(B_SRCS:.c=.o)
+FLAG_FILES = basic_create bonus_create
 
 all: $(NAME)
 
-$(NAME): $(M_OBJS)
-	ar rc $@ $^
+$(NAME): basic_create
 
-bonus: $(BONUS) 
-	
-$(BONUS): $(M_OBJS) $(B_OBJS)
-	ar rc $(NAME) $(M_OBJS) $(B_OBJS)
+bonus: bonus_create
+
+basic_create : $(M_OBJS)
+	rm -f bonus_create
+	ar rc $(NAME) $^
+	touch $@
+
+bonus_create: $(M_OBJS) $(B_OBJS)
+	rm -f basic_create
+	ar rc $(NAME) $^
+	touch $@
 
 clean:
-	rm -f $(M_OBJS) $(B_OBJS)
+	rm -f $(M_OBJS) $(B_OBJS) $(FLAG_FILES)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(FLAG_FILES)
 
 re: fclean all
 
-.PHONY: $(NAME) all re clean fclean bonus
+.PHONY: all re clean fclean bonus
