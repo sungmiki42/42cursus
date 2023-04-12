@@ -1,3 +1,1 @@
-hello, world
-My name is sungmiki.
-I am doing gnl test.
+
